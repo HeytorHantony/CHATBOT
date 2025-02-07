@@ -50,7 +50,7 @@ client.on('message', async msg => {
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(3000);
         await client.sendMessage(msg.from, '1️⃣ Artes e Design\n👉 Digite a letra do serviço que você deseja em Artes e Design:\nA) Banners – Criação de banners para online e offline.\nB) Outdoors – Design personalizado para outdoors.\nC) Posts para Redes Sociais – Posts criativos para aumentar o engajamento nas redes.');
-        const media = MessageMedia.fromFilePath("C:\\Users\\hanto\\Downloads\\CULTO JOVENS .mp4");
+        const media = MessageMedia.fromFilePath("/home/ubuntu/chatbotspace/LogoSpace.jpg");
         await client.sendMessage(msg.from, media, { caption: "Aqui está um exemplo de vídeo 🎥" });
        
 
