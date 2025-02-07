@@ -1,12 +1,12 @@
+const path = require('path');
 // leitor de qr code
 const qrcode = require('qrcode-terminal');
 const { Client, Buttons, List, MessageMedia } = require('whatsapp-web.js'); // Mudança Buttons
 const client = new Client({
     puppeteer: {
         args: ['--no-sandbox', '--disable-setuid-sandbox']
-    }
+    }
 });
-
 // serviço de leitura do qr code
 client.on('qr', qr => {
     qrcode.generate(qr, {small: true});
@@ -33,15 +33,13 @@ client.on('message', async msg => {
         await delay(3000); //Delay de 3000 milisegundos mais conhecido como 3 segundos
         const contact = await msg.getContact(); //Pegando o contato
         const name = contact.pushname; //Pegando o nome do contato
-        await client.sendMessage(msg.from,'Olá! '+ name.split(" ")[0] + 'Bem-vindo à SPACE!🚀\nComo podemos ajudar a impulsionar o seu negócio hoje? \nEscolha uma opção digitando o número correspondente:\n\n1️⃣ Artes e Design – Criamos artes para banners, outdoors, posts para redes sociais e muito mais.\n2️⃣ Produção de Vídeos – Edição e criação de vídeos profissionais para promover sua marca de maneira impactante\n3️⃣ Tráfego Pago – Anúncios no Google, Facebook e Instagram para aumentar seu alcance e atrair mais clientes.\n4️⃣ Marketing Digital – Estratégias para melhorar a presença digital e o crescimento da sua marca.\n5️⃣ Identidade Visual – Desenvolvemos logotipos, paletas de cores e toda a identidade visual da sua marca.\n6️⃣ Outros Serviços – Precisa de algo diferente? Fale conosco e encontraremos a melhor solução para você!\n👉 Digite o número da opção desejada.'); //Primeira mensagem de texto
+        await client.sendMessage(msg.from,'Olá! '+ name.split(" ")[0] + ' Bem-vindo à SPACE!🚀\nComo podemos ajudar a impulsionar o seu negócio hoje? \nEscolha uma opção digitando o número correspondente:\n\n1️⃣ Artes e Design – Criamos artes para banners, outdoors, posts para redes sociais e muito mais.\n2️⃣ Produção de Vídeos – Edição e criação de vídeos profissionais para promover sua marca de maneira impactante\n3️⃣ Tráfego Pago – Anúncios no Google, Facebook e Instagram para aumentar seu alcance e atrair mais clientes.\n4️⃣ Marketing Digital – Estratégias para melhorar a presença digital e o crescimento da sua marca.\n5️⃣ Identidade Visual – Desenvolvemos logotipos, paletas de cores e toda a identidade visual da sua marca.\n6️⃣ Outros Serviços – Precisa de algo diferente? Fale conosco e encontraremos a melhor solução para você!\n👉 Digite o número da opção desejada.'); //Primeira mensagem de texto
         await delay(3000); //delay de 3 segundos
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(5000); //Delay de 5 segundos
     
         
     }
-
-
 
 
     if (msg.body !== null && msg.body === '1' && msg.from.endsWith('@c.us')) {
@@ -52,7 +50,8 @@ client.on('message', async msg => {
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(3000);
         await client.sendMessage(msg.from, '1️⃣ Artes e Design\n👉 Digite a letra do serviço que você deseja em Artes e Design:\nA) Banners – Criação de banners para online e offline.\nB) Outdoors – Design personalizado para outdoors.\nC) Posts para Redes Sociais – Posts criativos para aumentar o engajamento nas redes.');
-
+        const media = MessageMedia.fromFilePath("C:\\Users\\hanto\\Downloads\\CULTO JOVENS .mp4");
+        await client.sendMessage(msg.from, media, { caption: "Aqui está um exemplo de vídeo 🎥" });
        
 
     }
@@ -65,6 +64,8 @@ client.on('message', async msg => {
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(3000);
         await client.sendMessage(msg.from, '2️⃣ Vídeos\n👉 Escolha uma opção digitando a letra correspondente Vídeos:\n\nD) Vídeos Institucionais – Apresente sua empresa de forma profissional.\nE) Vídeos para Redes Sociais – Vídeos curtos e criativos para engajamento nas redes.\nF) Animações e Motion Graphics – Criação de animações para destacar sua mensagem.\nG) Vídeos Publicitários – Produção de vídeos para campanhas publicitárias.');
+
+
 
         
     }
@@ -129,6 +130,17 @@ client.on('message', async msg => {
 
 
     if (msg.body !== null && msg.body === '10' && msg.from.endsWith('@c.us')) {
+        const chat = await msg.getChat();
+
+
+        await delay(3000); //delay de 3 segundos
+        await chat.sendStateTyping(); // Simulando Digitação
+        await delay(3000);
+        await client.sendMessage(msg.from, '1️⃣shannon\n👉 Digite a letra do serviço que você deseja em Artes e Design:\nA) Banners – Criação de banners para online e offline.\nB) Outdoors – Design personalizado para outdoors.\nC) Posts para Redes Sociais – Posts criativos para aumentar o engajamento nas redes.');
+
+    }
+    
+    if (msg.body !== null && msg.body === '11' && msg.from.endsWith('@c.us')) {
         const chat = await msg.getChat();
 
 
