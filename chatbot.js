@@ -64,7 +64,8 @@ client.on('message', async msg => {
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(3000);
         await client.sendMessage(msg.from, '2️⃣ Vídeos\n👉 Escolha uma opção digitando a letra correspondente Vídeos:\n\nD) Vídeos Institucionais – Apresente sua empresa de forma profissional.\nE) Vídeos para Redes Sociais – Vídeos curtos e criativos para engajamento nas redes.\nF) Animações e Motion Graphics – Criação de animações para destacar sua mensagem.\nG) Vídeos Publicitários – Produção de vídeos para campanhas publicitárias.');
-
+        const media = MessageMedia.fromFilePath("C:\Users\hanto\Downloads\Cartaz tabela de valores para barbearia rústico azul.png");
+        await client.sendMessage(msg.from, media, { caption: "Aqui está um exemplo de víd 🎥" });
 
 
         
