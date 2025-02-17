@@ -33,7 +33,7 @@ client.on('message', async msg => {
         await delay(3000); //Delay de 3000 milisegundos mais conhecido como 3 segundos
         const contact = await msg.getContact(); //Pegando o contato
         const name = contact.pushname; //Pegando o nome do contato
-        await client.sendMessage(msg.from,'Olá! '+ name.split(" ")[0] + ' Bem-vindo à SPACE!🚀\nComo podemos ajudar a impulsionar o seu negócio hoje? \nEscolha uma opção digitando o número correspondente:\n\n1️⃣ Artes e Design \n2️⃣ Produção de Vídeos \n3️⃣ Tráfego Pago \n4️⃣ Marketing Digital \n5️⃣ Identidade Visual \n6️⃣ Outros Serviços \n👉 Digite o número da opção desejada.'); //Primeira mensagem de texto
+        await client.sendMessage(msg.from,'Olá! '+ name.split(" ")[0] + ' Bem-vindo  o heytor à SPACE!🚀\nComo podemos ajudar a impulsionar o seu negócio hoje? \nEscolha uma opção digitando o número correspondente:\n\n1️⃣ Artes e Design \n2️⃣ Produção de Vídeos \n3️⃣ Tráfego Pago \n4️⃣ Marketing Digital \n5️⃣ Identidade Visual \n6️⃣ Outros Serviços \n👉 Digite o número da opção desejada.'); //Primeira mensagem de texto
         await delay(3000); //delay de 3 segundos
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(5000); //Delay de 5 segundos
@@ -50,7 +50,7 @@ client.on('message', async msg => {
         await chat.sendStateTyping(); // Simulando Digitação
         await delay(3000);
         await client.sendMessage(msg.from, '1️⃣ Artes e Design\n👉 Digite a letra do serviço que você deseja em Artes e Design:\nA) Banners – Criação de banners para online e offline.\nB) Outdoors – Design personalizado para outdoors.\nC) Posts para Redes Sociais – Posts criativos para aumentar o engajamento nas redes.');
-        const media = MessageMedia.fromFilePath("/home/ubuntu/chatbotspace/LogoSpace.jpg");
+        const media = MessageMedia.fromFilePath("\Users\hanto\OneDrive\Área de Trabalho\CHATBOT\maok.JPG");
         await client.sendMessage(msg.from, media, { caption: "Aqui está um exemplo de vídeo 🎥" });
        
 
